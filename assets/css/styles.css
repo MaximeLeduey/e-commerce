@@ -1,28 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Playfair+Display:ital@1&display=swap');
-/* styles qui s'appliquent à toute la page */
+
+/* -------------------------------------------------------------------------------------
+styles qui s'appliquent à toute la page
+------------------------------------------------------------------------------------- */
 
 h1 {
     font-family: 'Playfair Display';
+    font-size: 30px;
 }
 
 h2 {
     font-family: 'EB Garamond';
 }
 
+.discover {
+    background-color: antiquewhite;
+    width: 100vw;
+}
+
+.articles-container {
+    width: 100vw;
+}
+
+/* -------------------------------------------------------------------------------------
+styles du header
+------------------------------------------------------------------------------------- */
+
 
 header {
     height: 90px;
-    width: 428px;
+    width: 100vw;
+}
+
+.header-wrapper {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.search-cart {
+    width: 83px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* -------------------------------------------------------------------------------------
+styles de la première section 
+------------------------------------------------------------------------------------- */
+
+
+.discover-watches {
+    height: 620px;
+}
+
+.container-watches {
+    width: 100vw;
+    height: 630px;
+}
+
+
+/* -------------------------------------------------------------------------------------
+styles de la deuxième section 
+------------------------------------------------------------------------------------- */
+
+.discover-clothes {
+    height: 450px;
+}
+
+.container-clothes {
+    height: 2244px;
 }
 
 
 
+/* -------------------------------------------------------------------------------------
+styles de la troisième section 
+------------------------------------------------------------------------------------- */
 
+.discover-shoes {
+    height: 450px;
+}
+
+.container-shoes {
+    height: 640px;
+}
+
+
+/* -------------------------------------------------------------------------------------
+styles du footer 
+------------------------------------------------------------------------------------- */
+
+footer {
+    width: 100vw;
+    height: 350px;
+    background-color: #322D2D;
+}
+
+
+/* -------------------------------------------------------------------------------------
+media queries tablette
+------------------------------------------------------------------------------------- */
 
 
 @media screen and (min-width: 1024px) {
-    header {
-        height: 100px;
-        width: 1024px;
-    }
+   
 }
