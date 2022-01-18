@@ -4,6 +4,10 @@
 styles qui s'appliquent à toute la page
 ------------------------------------------------------------------------------------- */
 
+body * {
+    font-family: 'Montserrat';
+}
+
 h1 {
     font-family: 'Playfair Display';
     font-size: 30px;
@@ -59,8 +63,41 @@ styles de la première section
 }
 
 .container-watches {
-    width: 100vw;
+    width: 934px;
     height: 630px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-watches {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 874px;
+}
+
+.watch {
+    width: 274px;
+    height: 400px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.images {
+    width: 229px;
+    height: 255px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.like {
+    align-self: flex-start;
+    z-index: 2;
 }
 
 
