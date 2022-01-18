@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Playfair+Display:ital@1&display=swap');
+/* styles qui s'appliquent à toute la page */
+
+h1 {
+    font-family: 'Playfair Display';
+}
+
+h2 {
+    font-family: 'EB Garamond';
+}
+
+
+header {
+    height: 90px;
+    width: 428px;
+}
+
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+    header {
+        height: 100px;
+        width: 1024px;
+    }
+}
