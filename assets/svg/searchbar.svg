@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="189" height="62" viewBox="0 0 189 62">
+  <g id="Groupe_83" data-name="Groupe 83" transform="translate(-1555.217 -21)">
+    <g id="Rectangle_19" data-name="Rectangle 19" transform="translate(1555.217 21)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="189" height="62" rx="24" stroke="none"/>
+      <rect x="0.5" y="0.5" width="188" height="61" rx="23.5" fill="none"/>
+    </g>
+    <path id="Icon_ionic-ios-search" data-name="Icon ionic-ios-search" d="M31.184,29.539l-7.509-7.578a10.7,10.7,0,1,0-1.624,1.645l7.46,7.529a1.156,1.156,0,0,0,1.631.042A1.163,1.163,0,0,0,31.184,29.539ZM15.265,23.7a8.449,8.449,0,1,1,5.977-2.474A8.4,8.4,0,0,1,15.265,23.7Z" transform="translate(1571.686 34.007)"/>
+    <text id="Rechercher_" data-name="Rechercher
+" transform="translate(1632.217 57)" fill="#707070" font-size="14" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Rechercher</tspan><tspan x="0" y="18"></tspan></text>
+  </g>
+</svg>

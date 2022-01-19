@@ -8,10 +8,14 @@ styles qui s'appliquent à toute la page
 ------------------------------------------------------------------------------------- */
 
 
-
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
 
 body * {
     font-family: 'Montserrat';
+    overflow: hidden;
 }
 
 h1 {
@@ -65,12 +69,16 @@ header {
     padding-right: 30px;
 }
 
-.search-cart {
+.icons {
     width: 83px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+.searchbar , .wishlist {
+    display: none;
+}
 
 
 
@@ -90,6 +98,7 @@ styles de la première section
     height: 630px;
     display: flex;
     align-items: center;
+    overflow-x: auto;
 }
 
 .wrapper-watches {
@@ -184,7 +193,8 @@ styles de la troisième section
 }
 
 .container-shoes {
-    height: 640px;
+    width: 934px;
+    height: 630px;
     display: flex;
     align-items: center;
 }
@@ -225,16 +235,25 @@ footer {
     background-color: #322D2D;
     color: white;
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0 30px 0;
 }
 
 .footer-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 100%;
+    height: 100%;
 }
 
 .footer-group-one {
     display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 20%;
 }
 
 .footer-group-two {
@@ -250,5 +269,150 @@ media queries tablette
 
 
 @media screen and (min-width: 1024px) {
-   
+    /* general tablette */
+    .btn-addtocart {
+        width: 312px;
+        height: 55px;
+    }
+   /* header tablette */
+   .icons {
+       width: 380px;
+   }
+   .wishlist {
+       display: block;
+   }
+   .search {
+    display: none;
+    }
+    .searchbar {
+        display: block;
+    }
+    /* première section tablette */
+    .container-watches {
+        height: 676px;
+    }
+    .wrapper-watches {
+        width: 1249px;
+    }
+    .watch {
+        height: 453px;
+        width: 383px;
+    }
+    /* deuxième section tablette */
+    .discover-clothes {
+        height: 769px;
+    }
+    .container-clothes {
+        height: 1333px;
+    }
+    
+    .wrapper-clothes { 
+        height: 1137px;
+        width: 971px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .clothe {
+        width: 460px;
+        height: 509px;
+    }
+    
+    .images-medium {
+        height: 300px;
+        width: 300px; 
+    }
+    /* troisième section tablette */
+    
+    .discover-shoes {
+        height: 682px;
+    }
+
+    .container-shoes {
+        width: 1249px;
+        height: 740px;
+    }
+
+    .wrapper-shoes {
+        width: 100%;
+    }
+
+    .shoe {
+        width: 383px;
+        height: 453px;
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------------------
+media queries desktop
+------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 1920px) {
+    /* header desktop */
+    .icons {
+       width: 380px;
+    }
+    /* première section desktop */
+    .discover-watches {
+        height: 810px;
+    }
+    .container-watches {
+        height: 1075px;
+    }
+    .wrapper-watches {
+        width: 2493px;
+    }
+    .watch {
+        height: 641px;
+        width: 600px;
+    }
+    .images-small {
+        width: 600px;
+        height: 529px;
+    }
+    /* deuxième section desktop */
+    .discover-clothes {
+        height: 804px;
+    }
+    .container-clothes {
+        height: 1930px;
+    }
+    
+    .wrapper-clothes { 
+        height: 1652px;
+        width: 1532px;
+    }
+    .clothe {
+        width: 460px;
+        height: 523px;
+    }
+    .clothe-one {
+        width: 925px;
+        height: 1672px;
+    }
+    .clothe-one .images-medium {
+        height: 1361px;
+        width: 908px; 
+    }
+    /* troisième section desktop */
+    
+    .discover-shoes {
+        height: 774px;
+    }
+
+    .container-shoes {
+        height: 939px;
+        width: 2493px;
+    }
+
+    .wrapper-shoes {
+        width: 100%;
+    }
+
+    .shoe {
+        width: 600px;
+        height: 641px;
+    }   
 }
