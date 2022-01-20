@@ -21,22 +21,22 @@
 ],
   "clothes": [
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/costume1.svg",
       "name": "Costume 3 pièces Regular Fit en laine vierge à motif",
       "price": "524€"
     },
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/costume2.svg",
       "name": "Costume 3 pièces en laine vierge texturée",
       "price": "329€"
     },
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/costume3.svg",
       "name": "Costume 3 pièces Regular Fit en laine vierge à carreaux",
       "price": "300€"
     },
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/costume4.svg",
       "name": "Costume Regular Fit en sergé de laine vierge",
       "price": "299€"
     }
