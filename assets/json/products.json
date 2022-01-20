@@ -1,4 +1,61 @@
 {
-  "name": "maxime",
-  "age": 19
+  "watches": [
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "DateJust",
+      "description": "La montre classique par excellence",
+      "price": "2450€"
+    },
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Oyster Perpetual",
+      "description": "L’essence de l’Oyster",
+      "price": "6000€"
+    },
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "DayDate",
+      "description": "La montre de prestige par excellence",
+      "price": "1500€"
+    }
+],
+  "clothes": [
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Costume 3 pièces Regular Fit en laine vierge à motif",
+      "price": "524€"
+    },
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Costume 3 pièces en laine vierge texturée",
+      "price": "329€"
+    },
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Costume 3 pièces Regular Fit en laine vierge à carreaux",
+      "price": "300€"
+    },
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Costume Regular Fit en sergé de laine vierge",
+      "price": "299€"
+    }
+  ],
+  "shoes": [
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Derbies en cuir au tannage végétal confectionnées en Italie",
+      "price": "299€"
+    },
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Chaussures derby en cuir en cuir lisse à semelle injectée de gomme",
+      "price": "199€"
+    },
+    {
+      "image": "./assets/img/Sacai villain red.PNG.png",
+      "name": "Chaussures derby en cuir avec logo embossé et semelle épaisse",
+      "price": "199€"
+    }
+  ]
 }
