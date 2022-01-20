@@ -1,74 +1,3 @@
-function addWatchesToCart() {
-  let buttons = document.querySelectorAll('.wrapper-watches button');
-  for ( btn of buttons ){
-    btn.addEventListener('click', function(){
-        let allText = this.previousElementSibling.textContent;
-        let words = allText.split("  ");
-        let nameAndDescription = words[0];
-        console.log(nameAndDescription);
-        let price = words[1];
-        console.log(price);
-        let cartItem = ` <div class="cart-item">
-                            <img class="img-cart">
-                            <p>${nameAndDescription}</p>
-                            <p>${price}</p>
-                            <p>supprimer<p>
-                          </div>`;
-        document.querySelector('.cart-wrapper').innerHTML += cartItem;
-    })
-  }
-}
-
-
-function addClothesToCart() {
-  let buttons = document.querySelectorAll('.wrapper-clothes button');
- 
-  for ( btn of buttons ){
-    btn.addEventListener('click', function(){
-      let allText = this.previousElementSibling.textContent;
-      let words = allText.split("  ");
-      let nameAndDescription = words[0];
-      console.log(nameAndDescription);
-      let price = words[1];
-      console.log(price);
-      let cartItem = ` <div class="cart-item">
-                            <img class="img-cart">
-                            <p>${nameAndDescription}</p>
-                            <p>${price}</p>
-                            <p>supprimer<p>
-                          </div>`;
-        document.querySelector('.cart-wrapper').innerHTML += cartItem;
-    })
-  }
-}
-
-function addShoesToCart() {
-  let buttons = document.querySelectorAll('.wrapper-shoes button');
-  for ( btn of buttons ){
-    btn.addEventListener('click', function(){
-      let allText = this.previousElementSibling.textContent;
-      let words = allText.split("  ");
-      let nameAndDescription = words[0];
-      console.log(nameAndDescription);
-      let price = words[1];
-      console.log(price);
-      let cartItem = ` <div class="cart-item">
-                            <img class="img-cart">
-                            <p>${nameAndDescription}</p>
-                            <p>${price}</p>
-                            <p>supprimer<p>
-                          </div>`;
-        document.querySelector('.cart-wrapper').innerHTML += cartItem;
-    })
-  }
-}
-
-
-
-
-
-
-
 
 // on va chercher les informations sur les montres dans le fichier json, puis on crée les éléments montres
 
@@ -180,3 +109,75 @@ function addtocart(){
     console.log("salut");
   })
 }
+
+
+
+
+function addWatchesToCart() {
+  let buttons = document.querySelectorAll('.wrapper-watches button');
+  for ( btn of buttons ){
+    btn.addEventListener('click', function(){
+        let allText = this.previousElementSibling.textContent;
+        let words = allText.split("  ");
+        let nameAndDescription = words[0];
+        console.log(nameAndDescription);
+        let price = words[1];
+        console.log(price);
+        let cartItem = ` <div class="cart-item">
+                            <img class="img-cart">
+                            <p>${nameAndDescription}</p>
+                            <p>${price}</p>
+                            <p class="remove">supprimer</p>
+                          </div>`;
+        document.querySelector('.cart-wrapper').innerHTML += cartItem;
+    })
+  }
+}
+
+
+function addClothesToCart() {
+  let buttons = document.querySelectorAll('.wrapper-clothes button');
+ 
+  for ( btn of buttons ){
+    btn.addEventListener('click', function(){
+      let allText = this.previousElementSibling.textContent;
+      let words = allText.split("  ");
+      let nameAndDescription = words[0];
+      console.log(nameAndDescription);
+      let price = words[1];
+      console.log(price);
+      let cartItem = ` <div class="cart-item">
+                            <img class="img-cart">
+                            <p>${nameAndDescription}</p>
+                            <p>${price}</p>
+                            <p class="remove">supprimer</p>
+                          </div>`;
+        document.querySelector('.cart-wrapper').innerHTML += cartItem;
+    })
+  }
+}
+
+function addShoesToCart() {
+  let buttons = document.querySelectorAll('.wrapper-shoes button');
+  for ( btn of buttons ){
+    btn.addEventListener('click', function(){
+      let allText = this.previousElementSibling.textContent;
+      let words = allText.split("  ");
+      let nameAndDescription = words[0];
+      console.log(nameAndDescription);
+      let price = words[1];
+      console.log(price);
+      let cartItem = ` <div class="cart-item">
+                            <img class="img-cart">
+                            <p>${nameAndDescription}</p>
+                            <p>${price}</p>
+                            <p class="remove">supprimer</p>
+                          </div>`;
+        document.querySelector('.cart-wrapper').innerHTML += cartItem;
+        remove();
+        
+    })
+  }
+}
+
+
