@@ -119,22 +119,23 @@ function addWatchesToCart() {
         let allText = this.previousElementSibling.textContent;
         let words = allText.split("  ");
         let nameAndDescription = words[0];
-        console.log(nameAndDescription);
+        // console.log(nameAndDescription);
         let price = words[1];
-        console.log(price);
+        // console.log(price);
         let cartItem = ` <div class="cart-item">
                           <img class="img-cart">
                           <p>${nameAndDescription}</p>
-                          <p>${price}</p>
-                          <img class="minus" src="assets/svg/moins.svg">
+                          <p class="item-current-price">${price}</p>
+                          <img class="q minus" src="assets/svg/moins.svg">
                           <p class="quantity">quantité</p>
-                          <img class="plus" src="assets/svg/plus.svg">
                           <p>1</p>
+                          <img class="q plus" src="assets/svg/plus.svg">
                           <p class="remove">supprimer</p>
                         </div>`;
         document.querySelector('.cart-wrapper').innerHTML += cartItem;
         removeToCart();
         quantity();
+        finalPrice();
     })
   }
 }
@@ -147,22 +148,23 @@ function addClothesToCart() {
       let allText = this.previousElementSibling.textContent;
       let words = allText.split("  ");
       let nameAndDescription = words[0];
-      console.log(nameAndDescription);
+      // console.log(nameAndDescription);
       let price = words[1];
-      console.log(price);
+      // console.log(price);
       let cartItem = ` <div class="cart-item">
                           <img class="img-cart">
                           <p>${nameAndDescription}</p>
-                          <p>${price}</p>
-                          <img class="minus" src="assets/svg/moins.svg">
+                          <p class="item-current-price">${price}</p>
+                          <img class="q minus" src="assets/svg/moins.svg">
                           <p class="quantity">quantité</p>
-                          <img class="plus" src="assets/svg/plus.svg">
                           <p>1</p>
+                          <img class="q plus" src="assets/svg/plus.svg">
                           <p class="remove">supprimer</p>
                         </div>`;
         document.querySelector('.cart-wrapper').innerHTML += cartItem;
         removeToCart();
         quantity();
+        finalPrice();
     })
   }
 }
@@ -174,22 +176,23 @@ function addShoesToCart() {
       let allText = this.previousElementSibling.textContent;
       let words = allText.split("  ");
       let nameAndDescription = words[0];
-      console.log(nameAndDescription);
+      // console.log(nameAndDescription);
       let price = words[1];
-      console.log(price);
+      // console.log(price);
       let cartItem = ` <div class="cart-item">
                         <img class="img-cart">
                         <p>${nameAndDescription}</p>
-                        <p>${price}</p>
-                        <img class="minus" src="assets/svg/moins.svg">
+                        <p class="item-current-price">${price}</p>
+                        <img class="q minus" src="assets/svg/moins.svg">
                         <p class="quantity">quantité</p>
-                        <img class="plus" src="assets/svg/plus.svg">
                         <p>1</p>
+                        <img class="q plus" src="assets/svg/plus.svg">
                         <p class="remove">supprimer</p>
                       </div>`;
         document.querySelector('.cart-wrapper').innerHTML += cartItem;
         removeToCart();
         quantity();
+        finalPrice();
     })
   }
 }
@@ -201,18 +204,57 @@ function removeToCart() {
     let remove = item.querySelector('.remove');
     remove.addEventListener('click', function() {
       this.closest('.cart-item').remove();
+      finalPrice();
     })
   } 
 }
 
 
 function quantity() {
-  let plus = document.querySelectorAll('.plus');
-  for ( p of plus) {
-    p.addEventListener('click', function(){
-      console.log('plus');
+  let qButtons = document.querySelectorAll('.q');
+  for ( q of qButtons) {
+    q.addEventListener('click', function(){
+      if ( this.className == "q plus") {
+        let currentPrice = this.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        let quantity = this.previousElementSibling.textContent;
+        quantity = parseInt(quantity);
+        currentPrice = parseFloat(currentPrice);
+        initialPrice = currentPrice / quantity;
+        quantity += 1;
+        this.previousElementSibling.textContent = quantity;
+        let newPrice = initialPrice * quantity;
+        this.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent = newPrice;
+      }
+      else {
+        let currentPrice = this.previousElementSibling.textContent;
+        let quantity = this.nextElementSibling.nextElementSibling.textContent;
+        currentPrice = parseFloat(currentPrice)
+        quantity = parseInt(quantity);
+        if ( quantity > 1) {
+          initialPrice = currentPrice / quantity;
+          quantity -= 1;
+          this.nextElementSibling.nextElementSibling.textContent = quantity;
+          let newPrice = initialPrice * quantity;
+          this.previousElementSibling.textContent = newPrice;
+        }
+        else {
+          console.log("erreur");
+        }
+      }
+      finalPrice();
     })
   }
+}
+
+
+
+function finalPrice() {
+  let prices = document.querySelectorAll('.item-current-price');
+  let sum = 0;
+  for ( currentP of prices ) {
+    sum += parseFloat(currentP.textContent);
+  }
+  document.querySelector('.final-price').textContent = `prix total : ${sum} €`;
 }
 
 

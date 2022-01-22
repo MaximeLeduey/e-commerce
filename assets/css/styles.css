@@ -155,6 +155,11 @@ styles du panier
 .plus, .minus {
     width: 20px;
     height: 20px;
+    cursor: pointer;
+}
+
+.remove {
+    cursor: pointer;
 }
 
 /* -------------------------------------------------------------------------------------
