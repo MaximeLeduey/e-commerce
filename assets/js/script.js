@@ -1,4 +1,8 @@
 
+
+
+
+
 // on va chercher les informations sur les montres dans le fichier json, puis on crée les éléments montres
 
 fetch('assets/json/products.json')
@@ -103,12 +107,7 @@ document.querySelector('.cross').addEventListener('click', function(){
 
  
 
-function addtocart(){
-  document.querySelectorAll('.addtocart');
-  this.addEventListener('click', function(){
-    console.log("salut");
-  })
-}
+
 
 
 
@@ -124,12 +123,18 @@ function addWatchesToCart() {
         let price = words[1];
         console.log(price);
         let cartItem = ` <div class="cart-item">
-                            <img class="img-cart">
-                            <p>${nameAndDescription}</p>
-                            <p>${price}</p>
-                            <p class="remove">supprimer</p>
-                          </div>`;
+                          <img class="img-cart">
+                          <p>${nameAndDescription}</p>
+                          <p>${price}</p>
+                          <img class="minus" src="assets/svg/moins.svg">
+                          <p class="quantity">quantité</p>
+                          <img class="plus" src="assets/svg/plus.svg">
+                          <p>1</p>
+                          <p class="remove">supprimer</p>
+                        </div>`;
         document.querySelector('.cart-wrapper').innerHTML += cartItem;
+        removeToCart();
+        quantity();
     })
   }
 }
@@ -137,7 +142,6 @@ function addWatchesToCart() {
 
 function addClothesToCart() {
   let buttons = document.querySelectorAll('.wrapper-clothes button');
- 
   for ( btn of buttons ){
     btn.addEventListener('click', function(){
       let allText = this.previousElementSibling.textContent;
@@ -147,12 +151,18 @@ function addClothesToCart() {
       let price = words[1];
       console.log(price);
       let cartItem = ` <div class="cart-item">
-                            <img class="img-cart">
-                            <p>${nameAndDescription}</p>
-                            <p>${price}</p>
-                            <p class="remove">supprimer</p>
-                          </div>`;
+                          <img class="img-cart">
+                          <p>${nameAndDescription}</p>
+                          <p>${price}</p>
+                          <img class="minus" src="assets/svg/moins.svg">
+                          <p class="quantity">quantité</p>
+                          <img class="plus" src="assets/svg/plus.svg">
+                          <p>1</p>
+                          <p class="remove">supprimer</p>
+                        </div>`;
         document.querySelector('.cart-wrapper').innerHTML += cartItem;
+        removeToCart();
+        quantity();
     })
   }
 }
@@ -168,14 +178,39 @@ function addShoesToCart() {
       let price = words[1];
       console.log(price);
       let cartItem = ` <div class="cart-item">
-                            <img class="img-cart">
-                            <p>${nameAndDescription}</p>
-                            <p>${price}</p>
-                            <p class="remove">supprimer</p>
-                          </div>`;
+                        <img class="img-cart">
+                        <p>${nameAndDescription}</p>
+                        <p>${price}</p>
+                        <img class="minus" src="assets/svg/moins.svg">
+                        <p class="quantity">quantité</p>
+                        <img class="plus" src="assets/svg/plus.svg">
+                        <p>1</p>
+                        <p class="remove">supprimer</p>
+                      </div>`;
         document.querySelector('.cart-wrapper').innerHTML += cartItem;
-        remove();
-        
+        removeToCart();
+        quantity();
+    })
+  }
+}
+
+
+function removeToCart() {
+  let items  = document.querySelectorAll('.cart-item');
+  for ( item of items) {
+    let remove = item.querySelector('.remove');
+    remove.addEventListener('click', function() {
+      this.closest('.cart-item').remove();
+    })
+  } 
+}
+
+
+function quantity() {
+  let plus = document.querySelectorAll('.plus');
+  for ( p of plus) {
+    p.addEventListener('click', function(){
+      console.log('plus');
     })
   }
 }
