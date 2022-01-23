@@ -124,10 +124,10 @@ function addWatchesToCart() {
         // console.log(price);
         let cartItem = ` <div class="cart-item">
                           <img class="img-cart">
-                          <p>${nameAndDescription}</p>
+                          <p class="name-description">${nameAndDescription}</p>
                           <p class="item-current-price">${price}</p>
                           <img class="q minus" src="assets/svg/moins.svg">
-                          <p class="quantity">quantité</p>
+                          <p class="quantity">quantité :</p>
                           <p>1</p>
                           <img class="q plus" src="assets/svg/plus.svg">
                           <p class="remove">supprimer</p>
@@ -153,10 +153,10 @@ function addClothesToCart() {
       // console.log(price);
       let cartItem = ` <div class="cart-item">
                           <img class="img-cart">
-                          <p>${nameAndDescription}</p>
+                          <p class="name-description">${nameAndDescription}</p>
                           <p class="item-current-price">${price}</p>
                           <img class="q minus" src="assets/svg/moins.svg">
-                          <p class="quantity">quantité</p>
+                          <p class="quantity">quantité :</p>
                           <p>1</p>
                           <img class="q plus" src="assets/svg/plus.svg">
                           <p class="remove">supprimer</p>
@@ -181,10 +181,10 @@ function addShoesToCart() {
       // console.log(price);
       let cartItem = ` <div class="cart-item">
                         <img class="img-cart">
-                        <p>${nameAndDescription}</p>
+                        <p class="name-description">${nameAndDescription}</p>
                         <p class="item-current-price">${price}</p>
                         <img class="q minus" src="assets/svg/moins.svg">
-                        <p class="quantity">quantité</p>
+                        <p class="quantity">quantité :</p>
                         <p>1</p>
                         <img class="q plus" src="assets/svg/plus.svg">
                         <p class="remove">supprimer</p>
