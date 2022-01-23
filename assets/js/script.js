@@ -45,7 +45,7 @@ fetch('assets/json/products.json')
 
     let clotheToInject = `
         <div class="clothe">
-        <div class="images-small" style="background-image: url('${clotheImg}')">
+        <div class="images-medium" style="background-image: url('${clotheImg}')">
             <img src="/assets/svg/like.svg" class="like">
           </div>
         <p>${clotheName}<br>  ${clothePrice}  €</p>

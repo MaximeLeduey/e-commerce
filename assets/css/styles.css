@@ -145,7 +145,7 @@ styles du panier
     top: 0px;
     right: 0px;
     visibility: hidden;
-    z-index: 5;
+    z-index: 500;
     overflow: auto;
 }
 
@@ -158,7 +158,7 @@ styles du panier
 }
 
 .cart-wrapper {
-    position: relative;
+    position: absolute;
     height: 70%;
     width: 100vw;
     top:100px;
@@ -166,7 +166,6 @@ styles du panier
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    overflow: auto;
 }
 
 .cart-item {
@@ -188,7 +187,6 @@ styles du panier
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border: none;
 }
 
 .name-description {
@@ -395,7 +393,7 @@ styles de la deuxième section
     justify-content: flex-end;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 .wrapper-clothes .clothe:first-child .images-medium {
