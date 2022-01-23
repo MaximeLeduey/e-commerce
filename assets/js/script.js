@@ -1,8 +1,4 @@
 
-
-
-
-
 // on va chercher les informations sur les montres dans le fichier json, puis on crée les éléments montres
 
 fetch('assets/json/products.json')
@@ -20,10 +16,10 @@ fetch('assets/json/products.json')
 
     let watchToInject = `
         <div class="watch">
-            <div class="images-small">
+        <div class="images-small" style="background-image: url('${watchImg}')">
                 <img src="/assets/svg/like.svg" class="like">
             </div>
-            <p>${watcheName},${watchDescription}<br>  ${watchePrice}</p>
+            <p>${watcheName},${watchDescription}<br>  ${watchePrice}  €</p>
             <button class="btn-addtocart">Ajouter au panier</button>
         </div>`
 
@@ -49,10 +45,10 @@ fetch('assets/json/products.json')
 
     let clotheToInject = `
         <div class="clothe">
-          <div class="images-medium">
+        <div class="images-small" style="background-image: url('${clotheImg}')">
             <img src="/assets/svg/like.svg" class="like">
           </div>
-        <p>${clotheName}<br>  ${clothePrice}</p>
+        <p>${clotheName}<br>  ${clothePrice}  €</p>
         <button class="btn-addtocart">Ajouter au panier</button>
         </div>`
 
@@ -78,10 +74,10 @@ fetch('assets/json/products.json')
 
     let shoeToInject = `
         <div class="shoe">
-        <div class="images-small">
+        <div class="images-small" style="background-image: url('${shoeImg}')">
             <img src="/assets/svg/like.svg" class="like">
         </div>
-        <p>${shoeName}<br>  ${shoePrice}</p>
+        <p>${shoeName}<br>  ${shoePrice}  €</p>
         <button class="btn-addtocart">Ajouter au panier</button>
         </div>`
 
@@ -120,10 +116,11 @@ function addWatchesToCart() {
         let words = allText.split("  ");
         let nameAndDescription = words[0];
         // console.log(nameAndDescription);
-        let price = words[1];
+        let price = words[1] + words[2];
+        let itemImg = this.previousElementSibling.previousElementSibling.getAttribute('style');
         // console.log(price);
         let cartItem = ` <div class="cart-item">
-                          <img class="img-cart">
+                          <img class="img-cart" style="${itemImg}">
                           <p class="name-description">${nameAndDescription}</p>
                           <p class="item-current-price">${price}</p>
                           <img class="q minus" src="assets/svg/moins.svg">
@@ -136,6 +133,7 @@ function addWatchesToCart() {
         removeToCart();
         quantity();
         finalPrice();
+        numberInCart();
     })
   }
 }
@@ -149,10 +147,11 @@ function addClothesToCart() {
       let words = allText.split("  ");
       let nameAndDescription = words[0];
       // console.log(nameAndDescription);
-      let price = words[1];
+      let price = words[1] + words[2];
+      let itemImg = this.previousElementSibling.previousElementSibling.getAttribute('style');
       // console.log(price);
       let cartItem = ` <div class="cart-item">
-                          <img class="img-cart">
+                          <img class="img-cart" style="${itemImg}">
                           <p class="name-description">${nameAndDescription}</p>
                           <p class="item-current-price">${price}</p>
                           <img class="q minus" src="assets/svg/moins.svg">
@@ -165,6 +164,7 @@ function addClothesToCart() {
         removeToCart();
         quantity();
         finalPrice();
+        numberInCart();
     })
   }
 }
@@ -177,10 +177,11 @@ function addShoesToCart() {
       let words = allText.split("  ");
       let nameAndDescription = words[0];
       // console.log(nameAndDescription);
-      let price = words[1];
+      let price = words[1] + words[2];
+      let itemImg = this.previousElementSibling.previousElementSibling.getAttribute('style');
       // console.log(price);
       let cartItem = ` <div class="cart-item">
-                        <img class="img-cart">
+                        <img class="img-cart" style="${itemImg}">
                         <p class="name-description">${nameAndDescription}</p>
                         <p class="item-current-price">${price}</p>
                         <img class="q minus" src="assets/svg/moins.svg">
@@ -193,6 +194,7 @@ function addShoesToCart() {
         removeToCart();
         quantity();
         finalPrice();
+        numberInCart();
     })
   }
 }
@@ -216,6 +218,8 @@ function quantity() {
     q.addEventListener('click', function(){
       if ( this.className == "q plus") {
         let currentPrice = this.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        currentPrice = currentPrice.split("  ");
+        currentPrice = currentPrice[0];
         let quantity = this.previousElementSibling.textContent;
         quantity = parseInt(quantity);
         currentPrice = parseFloat(currentPrice);
@@ -223,10 +227,12 @@ function quantity() {
         quantity += 1;
         this.previousElementSibling.textContent = quantity;
         let newPrice = initialPrice * quantity;
-        this.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent = newPrice;
+        this.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent = `${newPrice}  €`;
       }
       else {
         let currentPrice = this.previousElementSibling.textContent;
+        currentPrice = currentPrice.split("  ");
+        currentPrice = currentPrice[0];
         let quantity = this.nextElementSibling.nextElementSibling.textContent;
         currentPrice = parseFloat(currentPrice)
         quantity = parseInt(quantity);
@@ -235,7 +241,7 @@ function quantity() {
           quantity -= 1;
           this.nextElementSibling.nextElementSibling.textContent = quantity;
           let newPrice = initialPrice * quantity;
-          this.previousElementSibling.textContent = newPrice;
+          this.previousElementSibling.textContent = `${newPrice}  €`;
         }
         else {
           console.log("erreur");
@@ -258,3 +264,9 @@ function finalPrice() {
 }
 
 
+function numberInCart() {
+  let numberInCart = document.querySelector('.cart container h2 span').textContent;
+  let articles = document.querySelectorAll('.cart-item');
+  articles = articles.length;
+  numberInCart.textContent = articles;
+}

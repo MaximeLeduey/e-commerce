@@ -1,19 +1,19 @@
 {
   "watches": [
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/montre1.svg",
       "name": "DateJust",
       "description": "La montre classique par excellence",
       "price": 2450
     },
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/montre2.svg",
       "name": "Oyster Perpetual",
       "description": "L’essence de l’Oyster",
       "price": 6000
     },
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/montre3.svg",
       "name": "DayDate",
       "description": "La montre de prestige par excellence",
       "price": 1500
@@ -43,17 +43,17 @@
   ],
   "shoes": [
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/chaussure1.svg",
       "name": "Derbies en cuir au tannage végétal confectionnées en Italie",
       "price": 299
     },
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/chaussure2.svg",
       "name": "Chaussures derby en cuir en cuir lisse à semelle injectée de gomme",
       "price": 199
     },
     {
-      "image": "/assets/svg/like.svg",
+      "image": "/assets/svg/chaussure3.svg",
       "name": "Chaussures derby en cuir avec logo embossé et semelle épaisse",
       "price": 199
     }
