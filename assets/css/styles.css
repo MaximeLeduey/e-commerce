@@ -146,6 +146,7 @@ styles du panier
     right: 0px;
     visibility: hidden;
     z-index: 5;
+    overflow: auto;
 }
 
 
@@ -165,6 +166,7 @@ styles du panier
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    overflow: auto;
 }
 
 .cart-item {

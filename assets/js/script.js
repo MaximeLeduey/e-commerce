@@ -207,6 +207,7 @@ function removeToCart() {
     remove.addEventListener('click', function() {
       this.closest('.cart-item').remove();
       finalPrice();
+      numberInCart();
     })
   } 
 }
@@ -265,8 +266,7 @@ function finalPrice() {
 
 
 function numberInCart() {
-  let numberInCart = document.querySelector('.cart container h2 span').textContent;
   let articles = document.querySelectorAll('.cart-item');
   articles = articles.length;
-  numberInCart.textContent = articles;
+  document.querySelector('.cart-container h2 span').textContent = articles;
 }
