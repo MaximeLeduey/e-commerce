@@ -1,5 +1,13 @@
+// -------------------------------------------------------------------------------------------------------------------
+// section où on va aller chercher les informations sur les différents articles pour créer les articles sur la page.
+// à noter que ayant 3 types d'articles différents sur la page, j'ai du faire 3 fetchs différents
+// -------------------------------------------------------------------------------------------------------------------
+
+
 
 // on va chercher les informations sur les montres dans le fichier json, puis on crée les éléments montres
+
+
 
 fetch('assets/json/products.json')
 .then(response => response.json())
@@ -29,7 +37,11 @@ fetch('assets/json/products.json')
   })
 })
 
+
+
 // on va chercher les informations sur les vêtements dans le fichier json, puis on crée les éléments vêtements
+
+
 
 fetch('assets/json/products.json')
 .then(response => response.json())
@@ -58,7 +70,11 @@ fetch('assets/json/products.json')
   })
 })
 
+
+
 // on va chercher les informations sur les chaussures dans le fichier json, puis on crée les éléments chaussures
+
+
 
 fetch('assets/json/products.json')
 .then(response => response.json())
@@ -104,8 +120,14 @@ document.querySelector('.cross').addEventListener('click', function(){
  
 
 
+// -------------------------------------------------------------------------------------------------------------------
+// section où on va s'occuper de l'ajout et de la suppression des articles au panier, encore une fois, mes 3 types d'articles m'obligent 
+// à faire 3 fonctions distinctes
+// -------------------------------------------------------------------------------------------------------------------
 
 
+// on ajoute une montre au panier au clic sur le bouton en allant chercher ses informations afin de creer un
+// élement dans le panier
 
 
 function addWatchesToCart() {
@@ -139,6 +161,10 @@ function addWatchesToCart() {
 }
 
 
+// on ajoute un costume au panier au clic sur le bouton en allant chercher ses informations pour créer un 
+// élement dans le panier
+
+
 function addClothesToCart() {
   let buttons = document.querySelectorAll('.wrapper-clothes button');
   for ( btn of buttons ){
@@ -168,6 +194,12 @@ function addClothesToCart() {
     })
   }
 }
+
+
+
+// on ajoute une chaussure au panier au clic sur le bouton en allant chercher ses informations pour créer un 
+// élement dans le panier
+
 
 function addShoesToCart() {
   let buttons = document.querySelectorAll('.wrapper-shoes button');
@@ -200,6 +232,9 @@ function addShoesToCart() {
 }
 
 
+// au clic sur supprimer, on supprime l'élement en question du panier
+
+
 function removeToCart() {
   let items  = document.querySelectorAll('.cart-item');
   for ( item of items) {
@@ -211,6 +246,18 @@ function removeToCart() {
     })
   } 
 }
+
+
+
+// -------------------------------------------------------------------------------------------------------------------
+//  section dans laquelle on va s'occuper de la quantité des articles dans le panier ainsi que de la variation du prix
+//  en fonction de la quantité
+// -------------------------------------------------------------------------------------------------------------------
+
+
+// au clic sur le moins ou le plus, on va ajouter ou soustraire une occurence d'article,
+// puis calculer le prix de la somme des occurences de cet article ( le même article en plusieurs fois encore ) en 
+// fonction de la quantité
 
 
 function quantity() {
@@ -255,6 +302,12 @@ function quantity() {
 
 
 
+// Cette fonction calcule la somme des prix de tous les articles présents dans le panier (avec les articles en plusieurs exemplaires 
+// aussi). Elle s'actualise à l'ajout d'un article au panier, à la suppression d'un article au panier, et aux variations de quantité
+// d'un même article
+
+
+
 function finalPrice() {
   let prices = document.querySelectorAll('.item-current-price');
   let sum = 0;
@@ -263,6 +316,12 @@ function finalPrice() {
   }
   document.querySelector('.final-price').textContent = `prix total : ${sum} €`;
 }
+
+
+
+// cette fonction indique le nombre d'articles différents dans le panier, elle s'actualise à l'ajout et à
+// la suppression d'un article au panier
+
 
 
 function numberInCart() {

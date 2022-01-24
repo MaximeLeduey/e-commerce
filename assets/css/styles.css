@@ -78,11 +78,10 @@ button {
 }
 
 
+
 /* -------------------------------------------------------------------------------------
 styles du header
 ------------------------------------------------------------------------------------- */
-
-
 
 
 header {
@@ -136,6 +135,7 @@ header img {
 /* -------------------------------------------------------------------------------------
 styles du panier 
 ------------------------------------------------------------------------------------- */
+
 
 .cart-container {
     width: 100vw;
@@ -270,6 +270,7 @@ styles du panier
     transform: translate(-50%);
 }
 
+
 /* -------------------------------------------------------------------------------------
 styles de la première section 
 ------------------------------------------------------------------------------------- */
@@ -318,18 +319,6 @@ styles de la première section
     background-position: center;
     background-size: contain;
 }
-
-/* .wrapper-watches .watch:first-child .images-small {
-    background-image: url('/assets/svg/montre1.svg');
-}
-
-.wrapper-watches .watch:nth-child(2) .images-small {
-    background-image: url('/assets/svg/montre2.svg');
-}
-
-.wrapper-watches .watch:last-child .images-small {
-    background-image: url('/assets/svg/montre3.svg');
-} */
 
 .like {
     align-self: flex-start;
@@ -397,7 +386,6 @@ styles de la deuxième section
 }
 
 .wrapper-clothes .clothe:first-child .images-medium {
-    /* background-image: url('/assets/svg/costume1.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
@@ -405,7 +393,6 @@ styles de la deuxième section
 }
 
 .wrapper-clothes .clothe:nth-child(2) .images-medium {
-    /* background-image: url('/assets/svg/costume2.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
@@ -413,7 +400,6 @@ styles de la deuxième section
 }
 
 .wrapper-clothes .clothe:nth-child(3) .images-medium {
-    /* background-image: url('/assets/svg/costume3.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
@@ -421,7 +407,6 @@ styles de la deuxième section
 }
 
 .wrapper-clothes .clothe:last-child .images-medium {
-    /* background-image: url('/assets/svg/costume4.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
@@ -478,29 +463,28 @@ styles de la troisième section
 }
 
 .wrapper-shoes .shoe:first-child .images-small {
-    /* background-image: url('/assets/svg/chaussure1.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
 }
 
 .wrapper-shoes .shoe:nth-child(2) .images-small {
-    /* background-image: url('/assets/svg/chaussure2.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
 }
 
 .wrapper-shoes .shoe:last-child .images-small {
-    /* background-image: url('/assets/svg/chaussure3.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
 }
 
+
 /* -------------------------------------------------------------------------------------
 styles du footer 
 ------------------------------------------------------------------------------------- */
+
 
 footer {
     width: 100vw;
@@ -725,6 +709,8 @@ media queries tablette
 media queries desktop
 ------------------------------------------------------------------------------------- */
 
+
+
 @media screen and (min-width: 1920px) {
     /* general desktop */
     .like {
@@ -808,34 +794,51 @@ media queries desktop
         height: 804px;
     }
     .container-clothes {
-        height: 1930px;
+        height: 1950px;
+        display: flex;
+        align-items: center;
     }
     
     .wrapper-clothes { 
         height: 1560px;
+        width: 2000px;
         display: grid;
+        /* grid-template-columns: 925px 460px;
+        grid-template-rows: 523, repeat(3); */
         grid-template-areas: "clothe-one clothe-two"
                              "clothe-one clothe-three"
                              "clothe-one clothe-four";
         
     }
-    .clothe {
+    /* .clothe {
         width: 460px;
         height: 520px;
+    } */
+    .images-medium {
+        width: 300px;
+        height: 300px;
     }
     .wrapper-clothes div:first-child {
-        width: 925px;
+        width: 920px;
         height: 1560px;
         grid-area: clothe-one;
+        /* grid-column: 1 / 2;
+        grid-row: 1 / 4; */
     }
     .wrapper-clothes div:nth-child(2) {
         grid-area: clothe-two;
+        /* grid-column: 2/ 3;
+        grid-row: 1 / 2; */
     }
     .wrapper-clothes div:nth-child(3) {
         grid-area: clothe-three;
+        /* grid-column: 2/ 3;
+        grid-row: 2 / 3; */
     }
     .wrapper-clothes div:last-child {
         grid-area: clothe-four;
+        /* grid-column: 2/ 3;
+        grid-row: 3 / 4; */
     }
     .wrapper-clothes div:first-child .images-medium {
         height: 1361px;
